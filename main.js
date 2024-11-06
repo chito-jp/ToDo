@@ -10,6 +10,12 @@ input.addEventListener("keydown", e => {
     if(e.key === "Enter")addTask(input.value);
 });
 
+const saveTask = text => {
+    const tasks = JSON.parse(localStorage.getItem("tasks"));
+    tasks.push(text);
+    localStorage.setItem(JSON.stringify(tasks))
+};
+
 const addTask = text => {
     const element = document.createElement("div");
     element.innerText = text;
@@ -20,12 +26,6 @@ const addTask = text => {
 const loadTask = () => {
     const tasks = JSON.parse(localStorage.getItem("tasks") || "[]");
     tasks.forEach(task => {addTask(task)});
-};
-
-const saveTask = text => {
-    const tasks = JSON.parse(localStorage.getItem("tasks"));
-    tasks.push(text);
-    localStorage.setItem(JSON.stringify(tasks))
 };
 
 document.addEventListener("DOMContentLoaded", loadTask());
