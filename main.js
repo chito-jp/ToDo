@@ -28,12 +28,13 @@ const loadTask = () => {
     tasks.forEach(task => {
         const element = document.createElement("div");
         element.innerText = task;
-        container.appendChild(element);});
+        container.appendChild(element);
+    });
 };
 
 const resetTask = () => {
     localStorage.removeItem("tasks");
-    loadTask();
+    container.innerHTML = "";
 };
 
 document.addEventListener("DOMContentLoaded", loadTask());
