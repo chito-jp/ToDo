@@ -3,6 +3,8 @@ const addBtn = document.getElementById("addTask");
 const input = document.getElementById("input");
 let tasks;
 
+document.addEventListener("DOMContentLoaded", loadTask);
+
 addBtn.addEventListener("click", () => {
     if(input.value)addTask(input.value);
 });
@@ -15,6 +17,7 @@ const addTask = text => {
     const element = document.createElement("div");
     element.innerText = text;
     container.appendChild(element);
+    saveTask(text);
 };
 
 const saveTask = text => {
