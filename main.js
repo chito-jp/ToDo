@@ -1,6 +1,6 @@
 const container = document.getElementById("ToDoContainer");
 const addBtn = document.getElementById("addTask");
-const input = document.getElementById("inptu");
+const input = document.getElementById("input");
 
 addBtn.addEventListener("click", () => {
     if(input.value)addTask(input.value);
