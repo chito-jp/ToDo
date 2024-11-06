@@ -3,8 +3,6 @@ const addBtn = document.getElementById("addTask");
 const input = document.getElementById("input");
 let tasks;
 
-document.addEventListener("DOMContentLoaded", loadTask);
-
 addBtn.addEventListener("click", () => {
     if(input.value)addTask(input.value);
 });
@@ -41,3 +39,5 @@ const resetTask = () => {
     localStorage.removeItem("tasks");
     container.innerHTML = "";
 };
+
+document.addEventListener("DOMContentLoaded", loadTask);
