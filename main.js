@@ -31,7 +31,7 @@ const loadTask = () => {
         container.appendChild(element);});
 };
 
-const resetTask () => {
+const resetTask = () => {
     localStorage.removeItem("tasks");
     loadTask();
 };
