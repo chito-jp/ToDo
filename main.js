@@ -3,11 +3,17 @@ const addBtn = document.getElementById("addTask");
 const input = document.getElementById("input");
 
 addBtn.addEventListener("click", () => {
-    if(input.value)addTask(input.value);
+    if(input.value){
+        addTask(input.value)
+        input.value = "";
+    };
 });
 
 input.addEventListener("keydown", e => {
-    if(e.key === "Enter")addTask(input.value);
+    if(e.key === "Enter"){
+        addTask(input.value);
+        input.value = "";
+    }
 });
 
 const saveTask = text => {
