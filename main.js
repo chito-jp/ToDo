@@ -25,7 +25,10 @@ const addTask = text => {
 
 const loadTask = () => {
     const tasks = JSON.parse(localStorage.getItem("tasks") || "[]");
-    tasks.forEach(task => {addTask(task)});
+    tasks.forEach(task => {
+        const element = document.createElement("div");
+        element.innerText = task;
+        container.appendChild(element);});
 };
 
 document.addEventListener("DOMContentLoaded", loadTask());
