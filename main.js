@@ -11,9 +11,9 @@ input.addEventListener("keydown", e => {
 });
 
 const saveTask = text => {
-    const tasks = JSON.parse(localStorage.getItem("tasks"));
+    const tasks = JSON.parse(localStorage.getItem("tasks") || "[]");
     tasks.push(text);
-    localStorage.setItem(JSON.stringify(tasks))
+    localStorage.setItem("tasks", JSON.stringify(tasks))
 };
 
 const addTask = text => {
