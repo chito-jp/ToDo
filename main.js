@@ -22,4 +22,10 @@ const loadTask = () => {
     tasks.forEach(task => {addTask(task)});
 };
 
+const saveTask = text => {
+    const tasks = JSON.parse(localStorage.getItem("tasks"));
+    tasks.push(text);
+    localStorage.setItem(JSON.stringify(tasks))
+};
+
 document.addEventListener("DOMContentLoaded", loadTask());
