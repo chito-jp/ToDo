@@ -6,6 +6,10 @@ addBtn.addEventListener("click", () => {
     if(input.value)addTask(input.value);
 });
 
+input.addEventListener("keydown", e => {
+    if(e.key === "Enter")addTask(input.value);
+});
+
 const addTask = text => {
     const element = document.createElement("div");
     element.innerText = text;
