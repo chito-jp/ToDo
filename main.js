@@ -31,4 +31,9 @@ const loadTask = () => {
         container.appendChild(element);});
 };
 
+const resetTask () => {
+    localStorage.removeItem("tasks");
+    loadTask();
+};
+
 document.addEventListener("DOMContentLoaded", loadTask());
