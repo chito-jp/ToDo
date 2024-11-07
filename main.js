@@ -26,7 +26,7 @@ const saveTask = text => {
 const addElement = text => {
     const el_container = document.createElement("div");
     el_container.dataset.id = el.rength;
-    el_container.innerHTML = `<p>${text,el_container.dataset.id}</p>`;
+    el_container.innerHTML = `<p>${text} ${el_container.dataset.id}</p>`;
     container.appendChild(el_container);
     el.push(el_container);
 };
