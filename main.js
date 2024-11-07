@@ -22,19 +22,21 @@ const saveTask = text => {
     localStorage.setItem("tasks", JSON.stringify(tasks))
 };
 
+const addElement = text => {
+    const el_container = document.createElement("div");
+    el_container.innerHTML = `<p>${text}</p>`;
+    container.appendChild(el_container);
+};
+
 const addTask = text => {
-    const element = document.createElement("div");
-    element.innerText = text;
-    container.appendChild(element);
+    addElement(text);
     saveTask(text);
 };
 
 const loadTask = () => {
     const tasks = JSON.parse(localStorage.getItem("tasks") || "[]");
     tasks.forEach(task => {
-        const element = document.createElement("div");
-        element.innerText = task;
-        container.appendChild(element);
+        addElement(task);
     });
 };
 
