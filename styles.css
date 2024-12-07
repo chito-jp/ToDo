@@ -1,1 +1,2 @@
 body{background-color: #f4f4f9; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; height: 100vh;}
+.box{background-color: white; border-radius: 0.5em; box-shadow: 0 2px 0.5em 0.1em #00000033;}
